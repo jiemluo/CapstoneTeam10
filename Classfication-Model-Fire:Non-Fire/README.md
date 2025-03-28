@@ -32,6 +32,7 @@ Download the dataset from the Kaggle link above.
 ```bash
 git clone https://github.com/yourusername/fire-detection.git
 cd fire-detection
+```
 
 ### Step 3: Upload the Dataset
 For running on Google Colab, upload the Kaggle dataset as the input in the 3rd cell of the notebook. If using other platforms, adjust the image upload method accordingly.
@@ -63,4 +64,4 @@ def predict_fire(img_path, model):
 # Example usage
 test_image_path = "test_image.jpg"  # Modify this with your image path
 print(f"Prediction: {predict_fire(test_image_path, model)}")
-
+```
