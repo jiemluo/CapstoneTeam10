@@ -1,8 +1,8 @@
-# 🔥 Fire Detection with Binary Classification
+## 🔥 Fire Detection with Binary Classification
 
 This project performs binary classification to identify whether an image contains fire or not. The model was trained using a dataset created by our team during the **NASA Space Apps Challenge 2018**.
 
-## 📂 Dataset
+### 📂 Dataset
 
 The dataset used for training and testing the model can be found on Kaggle: [Fire Dataset on Kaggle](https://www.kaggle.com/datasets/phylake1337/fire-dataset/data)
 
@@ -12,7 +12,7 @@ The dataset contains two folders:
 
 ---
 
-## ⚙️ Prerequisites
+### ⚙️ Prerequisites
 
 - Python 3.x
 - TensorFlow
@@ -23,25 +23,25 @@ The dataset contains two folders:
 
 ---
 
-## 📝 Getting Started
+### 📝 Getting Started
 
-### Step 1: Download the Dataset
+#### Step 1: Download the Dataset
 Download the dataset from the Kaggle link above.
 
-### Step 2: Clone the Repository
+#### Step 2: Clone the Repository
 ```bash
 git clone https://github.com/yourusername/fire-detection.git
 cd fire-detection
 ```
 
-### Step 3: Upload the Dataset
+#### Step 3: Upload the Dataset
 For running on Google Colab, upload the Kaggle dataset as the input in the 3rd cell of the notebook. If using other platforms, adjust the image upload method accordingly.
 
-### Step 4: Run the Notebook
+#### Step 4: Run the Notebook
 Follow the cell order and execute each cell in sequence.
 After running the model save cell, you will find the saved model in a folder named fire_detection_model.h5.
 
-### Step 5: Test the Model
+#### Step 5: Test the Model
 Upload your test images and use the following code to test:
 ```python
 def predict_fire(img_path, model):
