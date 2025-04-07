@@ -25,8 +25,30 @@ Clone the repository:
 ```bash
 git clone https://github.com/your-username/fire-image-detection.git
 cd fire-image-detection
-···
+```
 
 Navigate to the desired component folder and follow its specific instructions.
+
+##### 🤝 Contribution
+We welcome contributions! To get started:
+
+- Fork this repo
+- Create your branch:
+
+```bash
+git checkout -b <feature-name>
+```
+
+- Commit your changes:
+```bash
+git commit -am 'Add new feature'
+```
+
+- Push to the branch:
+```bash
+git push origin <feature-name>
+```
+
+- Submit a pull request
 
 
