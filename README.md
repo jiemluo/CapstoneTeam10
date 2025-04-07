@@ -13,7 +13,20 @@ Alongside the models, we've also developed a simple **React-based web app** to m
 
 ---
 
-#### 📂 Project Structure
+##### 📂 Project Structure
 
-The GitHub repository is organized for easy navigation and development:
+- The GitHub repository is organized for easy navigation and development:
+- Each subfolder contains its own `README.md` explaining setup, usage, and purpose.
+
+##### 🛠️ Installation (for Developers)
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/fire-image-detection.git
+cd fire-image-detection
+···
+
+Navigate to the desired component folder and follow its specific instructions.
+
 
