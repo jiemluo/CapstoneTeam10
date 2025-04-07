@@ -44,14 +44,14 @@ We welcome contributions! To get started:
   ```
 
 - Commit your changes:
-```bash
-git commit -am 'Add new feature'
-```
+  ```bash
+  git commit -am 'Add new feature'
+  ```
 
 - Push to the branch:
-```bash
-git push origin <feature-name>
-```
+  ```bash
+  git push origin <feature-name>
+  ```
 
 - Submit a pull request
 
