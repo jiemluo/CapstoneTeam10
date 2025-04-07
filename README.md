@@ -1,7 +1,7 @@
 Capstone Team 10 - The Insomniacs - 
 Team Members: Jie Luo, Abdullah Khan, Fadi Alnabolsi (falnabol-khanabd-jiemluo)
 
-### 🔥 Fire Image Detection and Classification
+## 🔥 Fire Image Detection and Classification
 
 Fire detection is an essential task for safety and disaster prevention. Traditional systems like heat sensors and alarms often struggle in open or large-scale environments. To enhance early detection, this project leverages **deep learning models** to analyze images and detect fire-related incidents.
 
@@ -13,12 +13,12 @@ Alongside the models, we've also developed a simple **React-based web app** to m
 
 ---
 
-##### 📂 Project Structure
+### 📂 Project Structure
 
 - The GitHub repository is organized for easy navigation and development:
 - Each subfolder contains its own `README.md` explaining setup, usage, and purpose.
 
-##### 🛠️ Installation (for Developers)
+### 🛠️ Installation (for Developers)
 
 Clone the repository:
 
@@ -29,7 +29,7 @@ cd fire-image-detection
 
 Navigate to the desired component folder and follow its specific instructions.
 
-##### 🤝 Contribution
+### 🤝 Contribution
 We welcome contributions! To get started:
 
 - Fork this repo
