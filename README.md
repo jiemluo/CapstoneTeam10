@@ -18,6 +18,8 @@ Alongside the models, we've also developed a simple **React-based web app** to m
 - The GitHub repository is organized for easy navigation and development:
 - Each subfolder contains its own `README.md` explaining setup, usage, and purpose.
 
+---
+
 ### 🛠️ Installation (for Developers)
 
 Clone the repository:
@@ -28,6 +30,8 @@ cd fire-image-detection
 ```
 
 Navigate to the desired component folder and follow its specific instructions.
+
+---
 
 ### 🤝 Contribution
 We welcome contributions! To get started:
