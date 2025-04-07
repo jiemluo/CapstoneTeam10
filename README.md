@@ -39,9 +39,9 @@ We welcome contributions! To get started:
 - Fork this repo
 - Create your branch:
 
-```bash
-git checkout -b <feature-name>
-```
+  ```bash
+  git checkout -b <feature-name>
+  ```
 
 - Commit your changes:
 ```bash
