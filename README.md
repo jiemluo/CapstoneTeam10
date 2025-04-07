@@ -1,5 +1,9 @@
-Capstone Team 10 - The Insomniacs - 
-Team Members: Jie Luo, Abdullah Khan, Fadi Alnabolsi (falnabol-khanabd-jiemluo)
+Capstone Team 10 - The Insomniacs 
+
+Team Members(falnabol-khanabd-jiemluo): 
+Jie Luo - jiemluo@umich.edu
+Abdullah Khan - khanabd@umich.edu
+Fadi Alnabolsi - falnabol@umich.edu
 
 ## 🔥 Fire Image Detection and Classification
 
