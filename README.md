@@ -1,4 +1,4 @@
-Capstone Team 10 - The Insomniacs 
+**Capstone Team 10 - The Insomniacs**
 
 **Team Members**(falnabol-khanabd-jiemluo): 
 - **Jie Luo** - jiemluo@umich.edu
