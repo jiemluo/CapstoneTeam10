@@ -108,8 +108,10 @@ const Webcam = () => {
     const formData = new FormData();
     formData.append('file', imageBlob);
   
+    let url = "http://mcfads1-CapstoneTeamInsomniacs.hf.space/predict";
+    // let url = "http://localhost:7860/predict";
     try {
-      const res = await fetch('http://localhost:7860/predict', {
+      const res = await fetch(url, {
         method: 'POST',
         body: formData,
       });
