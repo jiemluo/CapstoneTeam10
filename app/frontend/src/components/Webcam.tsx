@@ -13,6 +13,8 @@ const Webcam = () => {
 
   useEffect(() => {
     const startWebcam = async () => {
+      console.log(uploadedImage);
+      console.log(uploadedBlobUrl);
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
         if (videoRef.current) {
@@ -108,8 +110,8 @@ const Webcam = () => {
     const formData = new FormData();
     formData.append('file', imageBlob);
   
-    let url = "http://mcfads1-CapstoneTeamInsomniacs.hf.space/predict";
-    // let url = "http://localhost:7860/predict";
+    const url = "http://mcfads1-CapstoneTeamInsomniacs.hf.space/predict";
+    // const url = "http://localhost:7860/predict";
     try {
       const res = await fetch(url, {
         method: 'POST',
