@@ -162,22 +162,22 @@ const Webcam = () => {
         >
           ⬆️ Upload & Send
         </button>
-
+  
         <div className="flex items-center gap-3 mb-2">
-        <label className="text-sm font-medium text-gray-700">Live Monitoring</label>
-        <input
-          type="checkbox"
-          checked={liveMonitoring}
-          onChange={() => setLiveMonitoring((prev) => !prev)}
-          className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded"
-        />
-      </div>
+          <label className="text-sm font-medium text-gray-700">Live Monitoring</label>
+          <input
+            type="checkbox"
+            checked={liveMonitoring}
+            onChange={() => setLiveMonitoring((prev) => !prev)}
+            className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded"
+          />
+        </div>
       </div>
   
       {/* Output Comparison */}
-      <div className="flex flex-col md:flex-row w-full gap-4 flex-grow overflow-hidden">
+      <div className="flex flex-wrap md:flex-nowrap w-full gap-4 flex-grow overflow-hidden">
         {/* Captured Frame */}
-        <div className="flex-1 border-2 border-dashed border-gray-300 rounded-xl p-4 shadow-inner bg-white h-[35vh]">
+        <div className="flex-1 min-w-0 border-2 border-dashed border-gray-300 rounded-xl p-4 shadow-inner bg-white h-[35vh]">
           <p className="text-center text-gray-700 font-medium mb-2 text-sm">📷 Captured Frame</p>
           <canvas
             ref={canvasRef}
@@ -187,8 +187,8 @@ const Webcam = () => {
   
         {/* Prediction Output */}
         {predictionImageUrl && (
-          <div className="flex-1 border rounded-xl p-4 shadow-lg bg-white h-[35vh]">
-            <p className="text-center text-gray-700 font-medium mb-2 text-sm">🤖 Prediction Output</p>
+          <div className="flex-1 min-w-0 border rounded-xl p-4 shadow-lg bg-white h-[35vh]">
+            <p className="text-center text-gray-700 font-medium mb-2 text-sm">🤖 Prediction </p>
             <img
               src={predictionImageUrl}
               alt="Prediction Result"
