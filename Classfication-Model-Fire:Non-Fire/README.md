@@ -2,7 +2,7 @@
 
 This project performs binary classification to identify whether an image contains fire or not. The model was trained using a dataset created by our team during the **NASA Space Apps Challenge 2018**.
 
-### 📂 Dataset
+### Dataset
 
 The dataset used for training and testing the model can be found on Kaggle: [Fire Dataset on Kaggle](https://www.kaggle.com/datasets/phylake1337/fire-dataset/data)
 
@@ -12,7 +12,7 @@ The dataset contains two folders:
 
 ---
 
-### ⚙️ Prerequisites
+### Prerequisites
 
 - Python 3.x
 - TensorFlow
@@ -37,7 +37,7 @@ If you are running this notebook **outside of Google Colab**, you may need to **
 
 ---
 
-### 📝 Getting Started
+### Getting Started
 
 #### Step 1: Download the Dataset
 Download the dataset from the Kaggle link above.
