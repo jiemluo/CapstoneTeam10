@@ -21,6 +21,19 @@ The dataset contains two folders:
 - NumPy
 - Google Colab (recommended)
 
+**Environment Notes**
+
+Some utilities used in this project are specific to **Google Colab** and are not required (or available) in other environments. The table below outlines which libraries should be included in `requirements.txt` and which should be skipped:
+
+| Import                          | Include in `requirements.txt`? | Notes                                 |
+|---------------------------------|-------------------------------|----------------------------------------|
+| `from google.colab import drive` | ❌ No                          | Only available in Google Colab         |
+| `from google.colab import files` | ❌ No                          | Only available in Google Colab         |
+| `os`, `zipfile`                 | ❌ No                          | Built-in Python standard libraries     |
+| `cv2`, `tensorflow`, `sklearn`, `matplotlib`, `seaborn` | ✅ Yes | Must be listed in `requirements.txt` for installation |
+
+> If you are running this notebook **outside of Google Colab**, you may need to **modify** Colab-specific code blocks (e.g., `drive.mount()` or `files.upload()`) and ensure all required packages are installed using `pip install -r requirements.txt`.
+
 ---
 
 ### 📝 Getting Started
