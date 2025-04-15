@@ -14,12 +14,14 @@ The dataset contains two folders:
 
 ### Prerequisites
 
+- Google Colab 
 - Python 3.x
-- TensorFlow
-- Keras
-- OpenCV
 - NumPy
-- Google Colab (recommended)
+- OpenCV
+- TensorFlow
+- scikit-learn
+- Matplotlib
+- Seaborn
 
 **Environment Notes**
 
