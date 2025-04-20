@@ -1,3 +1,4 @@
+python==3.11.12
 cuda-python==12.6.2.post1
 dbus-python==1.2.18
 google-api-python-client==2.164.0
