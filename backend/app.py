@@ -9,11 +9,8 @@ import cv2
 import io
 import torchvision
 from torchvision.io import read_image
-from torchvision.transforms.functional import to_pil_image
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
-from torchvision import transforms
 from PIL import Image
-import numpy as np
 import uuid
 
 print(os.path.dirname(os.path.abspath(__file__)))
@@ -44,10 +41,9 @@ model.eval()
 
 def visualize_prediction(model, img_stream, device=torch.device('cpu')):
     try:
-        # Set model to eval mode
         model.eval()
         filename = f"tmp_img/{uuid.uuid4()}.jpg"
-        # Save uploaded file to a temporary file
+
         try:
             filename = f"tmp_img/{uuid.uuid4()}.jpg"
             print("attempted filename is: ", filename)
@@ -56,22 +52,18 @@ def visualize_prediction(model, img_stream, device=torch.device('cpu')):
         except Exception as e:
             raise RuntimeError(f"[File Save Error] Couldn't save uploaded image: {e}")
 
-
-        # Load image tensor using torchvision
         try:
             img_tensor = read_image(filename).float() / 255.0
             img_tensor = img_tensor.unsqueeze(0).to(device)
         except Exception as e:
             raise RuntimeError(f"[Tensor Conversion Error] Failed to convert image: {e}")
 
-        # Run inference
         try:
             with torch.no_grad():
                 preds = model(img_tensor)[0]
         except Exception as e:
             raise RuntimeError(f"[Model Inference Error] Prediction failed: {e}")
         
-        # Load original image with OpenCV for drawing
         try:
             img = cv2.imread(filename)
             if img is None:
@@ -79,7 +71,6 @@ def visualize_prediction(model, img_stream, device=torch.device('cpu')):
         except Exception as e:
             raise RuntimeError(f"[Image Load Error] Could not read image for visualization: {e}")
 
-        # Draw bounding boxes
         try:
             for i, box in enumerate(preds['boxes']):
                 score = preds['scores'][i].item()
@@ -103,7 +94,6 @@ def visualize_prediction(model, img_stream, device=torch.device('cpu')):
             raise RuntimeError(f"[Encoding Error] Could not convert image to bytes: {e}")
         
     finally:
-        #Always delete the temp file
         if filename and os.path.exists(filename):
             try:
                 os.remove(filename)

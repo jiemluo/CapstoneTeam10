@@ -112,7 +112,7 @@ const Webcam = () => {
     };
     img.src = imageUrl;
   
-    sendToAPI(file); // 👈 send right after selecting
+    sendToAPI(file);
   };
 
 
