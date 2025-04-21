@@ -20,7 +20,22 @@ Alongside the models, we've also developed a simple **React-based web app** to m
 ### 📂 Project Structure
 
 - The GitHub repository is organized for easy navigation and development:
-- Each subfolder contains its own `README.md` explaining setup, usage, and purpose.
+- The repository contains three main components, each in its own folder with a dedicated `README.md` explaining how to run the code.
+
+**`Classification-Model-Fire:Non-Fire/`**
+  - `Fire_Detection_Jie_Luo.ipynb` – Main notebook for building and testing the fire classification model.
+  - `fire_detection_model.h5` – Trained model file.
+  - `requirements.txt` – Python package dependencies.
+  - `test_image.jpg`, `test_image_2.jpg` – Sample images for testing the model.
+  - `README.md` – Instructions for running the notebook.
+
+**`Localization-Model-Fire/`**
+  - Notebook and scripts for the fire localization model.
+  - `README.md` – Instructions for training and testing localization.
+
+**`WebApp/`**
+  - Source code for the web interface (frontend and backend).
+  - `README.md` – Setup and deployment guide.
 
 ---
 

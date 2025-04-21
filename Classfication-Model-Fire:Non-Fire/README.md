@@ -2,7 +2,7 @@
 
 This project performs binary classification to identify whether an image contains fire or not. The model was trained using a dataset created by our team during the **NASA Space Apps Challenge 2018**.
 
-### 📂 Dataset
+### Dataset
 
 The dataset used for training and testing the model can be found on Kaggle: [Fire Dataset on Kaggle](https://www.kaggle.com/datasets/phylake1337/fire-dataset/data)
 
@@ -12,18 +12,34 @@ The dataset contains two folders:
 
 ---
 
-### ⚙️ Prerequisites
+### Prerequisites
 
+- Google Colab 
 - Python 3.x
-- TensorFlow
-- Keras
-- OpenCV
 - NumPy
-- Google Colab (recommended)
+- OpenCV
+- TensorFlow
+- scikit-learn
+- Matplotlib
+- Seaborn
+
+**Environment Notes**
+
+Some utilities used in this project are specific to **Google Colab** and are not required (or available) in other environments. The table below outlines which libraries has been included in `requirements.txt` and which should be skipped:
+
+| Import                          | Include in `requirements.txt`? | Notes                                 |
+|---------------------------------|-------------------------------|----------------------------------------|
+| `from google.colab import drive` | ❌ No                          | Only available in Google Colab         |
+| `from google.colab import files` | ❌ No                          | Only available in Google Colab         |
+| `os`, `zipfile`                 | ❌ No                          | Built-in Python standard libraries     |
+| `numpy`, `cv2`, `tensorflow`, `sklearn`, `matplotlib`, `seaborn` | ✅ Yes | Must be listed in `requirements.txt` for installation |
+
+
+If you are running this notebook **outside of Google Colab**, you may need to **modify** Colab-specific code blocks (e.g., `drive.mount()` or `files.upload()`) and ensure all required packages are installed using `pip install -r requirements.txt`.
 
 ---
 
-### 📝 Getting Started
+### Getting Started
 
 #### Step 1: Download the Dataset
 Download the dataset from the Kaggle link above.
