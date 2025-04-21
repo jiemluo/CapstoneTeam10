@@ -5,11 +5,21 @@ import { useRef, useState, useEffect } from 'react';
 const Webcam = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [predictionImageUrl, setPredictionImageUrl] = useState<string | null>(null);
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const [uploadedBlobUrl, setUploadedBlobUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [liveMonitoring, setLiveMonitoring] = useState(false);
+  const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
+  const [detectionImageUrl, setDetectionImageUrl] = useState<string | null>(null);
+  const [fireDetected, setFireDetected] = useState(false);
+
+  useEffect(() => {
+    if (detectionImageUrl) {
+      setFireDetected(true);
+    } else {
+      setFireDetected(false);
+    }
+  }, [detectionImageUrl]);
 
   useEffect(() => {
     const startWebcam = async () => {
@@ -110,17 +120,21 @@ const Webcam = () => {
     const formData = new FormData();
     formData.append('file', imageBlob);
   
-    const url = "https://mcfads1-CapstoneTeamInsomniacs.hf.space/predict";
     // const url = "http://localhost:7860/predict";
+    const PredictionURL = "https://mcfads1-CapstoneTeamInsomniacs.hf.space/predict";
+    const DetectionURL = "https://mcfads1-capstone10-luo.hf.space/predict";
+
     try {
-      const res = await fetch(url, {
-        method: 'POST',
-        body: formData,
-      });
+      const [predictionRes, detectionRes] = await Promise.all([
+        fetch(PredictionURL, { method: 'POST', body: formData }),
+        fetch(DetectionURL, { method: 'POST', body: formData }),
+      ]);
   
-      const resultBlob = await res.blob();
-      const imageUrl = URL.createObjectURL(resultBlob);
-      setPredictionImageUrl(imageUrl);
+      const predictionBlob = await predictionRes.blob();
+      setGeneratedImageUrl(URL.createObjectURL(predictionBlob));
+  
+      const detectionJson = await detectionRes.json();
+      setDetectionImageUrl(detectionJson["prediction"]);
     } catch (err) {
       console.error('API call failed:', err);
     }
@@ -186,11 +200,21 @@ const Webcam = () => {
         </div>
   
         {/* Prediction Output */}
-        {predictionImageUrl && (
-          <div className="flex-1 min-w-0 border rounded-xl p-4 shadow-lg bg-white h-[35vh]">
-            <p className="text-center text-gray-700 font-medium mb-2 text-sm">🤖 Prediction </p>
+        {generatedImageUrl && (
+          <div
+            className={`flex-1 min-w-0 rounded-xl p-4 shadow-lg h-[35vh] transition-all duration-300 ${
+              fireDetected
+                ? 'border-4 border-red-600 bg-gradient-to-br from-yellow-50 via-red-100 to-yellow-50'
+                : 'border bg-white'
+            }`}
+          >
+            <p className={`text-center font-medium mb-2 text-sm ${
+              fireDetected ? 'text-red-700' : 'text-gray-700'
+            }`}>
+              🤖 Prediction {fireDetected && '🔥'}
+            </p>
             <img
-              src={predictionImageUrl}
+              src={generatedImageUrl}
               alt="Prediction Result"
               className="w-full h-full object-contain rounded"
             />

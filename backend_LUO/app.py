@@ -30,41 +30,38 @@ model = load_model(model_path)
 
 def get_prediction(model, img_stream):
     try:
-        filename = f"tmp_img/{uuid.uuid4()}.jpg"
-        try:
-            print("attempted filename is: ", filename)
-            with open(filename, "wb") as f:
-                f.write(img_stream.read())
-        except Exception as e:
-            raise RuntimeError(f"[File Save Error] Couldn't save uploaded image: {e}")
+        # Convert stream to a NumPy array
+        file_bytes = np.asarray(bytearray(img_stream.read()), dtype=np.uint8)
 
-        try:
-            image = cv2.imread(filename)
-            dimensions = (128, 128)
-            image = cv2.resize(image, dimensions)
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-            image = (image/255).astype(np.float16)
-            image_data = image.reshape(1, 128, 128, 3)
-            prediction = model.predict(image_data)
-            class_label = "🔥 Fire" if np.argmax(prediction) == 1 else "❌ Non-Fire"
-            return class_label
-        except Exception as e:
-            print(e)
-            raise RuntimeError(f"Failed: {e}")
-        
-    finally:
-        if filename and os.path.exists(filename):
-            try:
-                os.remove(filename)
-            except Exception as e:
-                print(f"[Cleanup Warning] Could not delete temp file {filename}: {e}")
+        # Decode image using OpenCV
+        image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+        if image is None:
+            raise ValueError("Image decoding failed.")
+
+        # Resize, normalize, and expand dims
+        image = cv2.resize(image, (128, 128))
+        image = image / 255.0
+        image = np.expand_dims(image, axis=0)
+
+        # Make prediction
+        prediction = model.predict(image)
+        prediction = prediction[0]
+
+        if prediction[1] >= 0.96:
+            return True
+        else:
+            return False
+
+    except Exception as e:
+        print(e)
+        raise RuntimeError(f"Failed: {e}")
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     try:
         contents = await file.read()
-        img_stream = io.BytesIO(contents) 
+        img_stream = io.BytesIO(contents)
         classification = get_prediction(model, img_stream)
-        return Response(classification)
+        return {"prediction": classification}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
