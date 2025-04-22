@@ -15,6 +15,13 @@ We built two types of models:
 
 Alongside the models, we've also developed a simple **React-based web app** to make predictions accessible to non-technical users.
 
+##### 🌐 Web Application
+
+You can explore the live fire detection link here:  
+🔗 [https://capstone-team10.vercel.app/](https://capstone-team10.vercel.app/)
+
+This web interface allows users to upload an image/use web camera and receive real-time fire or non-fire predictions based on the trained classification model.
+
 ---
 
 ### 📂 Project Structure
