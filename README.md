@@ -24,17 +24,32 @@ Alongside the models, we've also developed a simple **React-based web app** to m
 
 **`Classification-Model-Fire:Non-Fire/`**
   - `Fire_Detection_Jie_Luo.ipynb` – Main notebook for building and testing the fire classification model.
+  - `Model_Usage_Example.ipynb`
+  - `README.md` – Instructions for running the notebook.
   - `fire_detection_model.h5` – Trained model file.
   - `requirements.txt` – Python package dependencies.
   - `test_image.jpg`, `test_image_2.jpg` – Sample images for testing the model.
-  - `README.md` – Instructions for running the notebook.
+
 
 **`Localization-Model-Fire/`**
-  - Notebook and scripts for the fire localization model.
+  - `Model_testing_RCNN.ipynb` - Notebook and scripts for the fire localization model.
   - `README.md` – Instructions for training and testing localization.
 
 **`WebApp/`**
-  - Source code for the web interface (frontend and backend).
+  - `app/`
+    - `frontend/`
+  - `backend/`
+    - `.gitattributes`
+    - `Dockerfile`
+    - `README.md`
+    - `app.py`
+    - `requirements.txt`
+  - `backend_LUO/`
+    - `.gitattributes`
+    - `Dockerfile`
+    - `README.md`
+    - `app.py`
+    - `requirements.txt`
   - `README.md` – Setup and deployment guide.
 
 **`README.md`**
