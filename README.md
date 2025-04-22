@@ -37,6 +37,10 @@ Alongside the models, we've also developed a simple **React-based web app** to m
   - Source code for the web interface (frontend and backend).
   - `README.md` – Setup and deployment guide.
 
+**`README.md`**
+
+**`Team 10 The Insomniacs - Video Summary (Fire Image Detection and Classification).mp4`**
+
 ---
 
 ### 🛠️ Installation (for Developers)
