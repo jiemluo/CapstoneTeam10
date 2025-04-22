@@ -24,7 +24,7 @@ Alongside the models, we've also developed a simple **React-based web app** to m
 
 **`Classification-Model-Fire:Non-Fire/`**
   - `Fire_Detection_Jie_Luo.ipynb` – Main notebook for building and testing the fire classification model.
-  - `Model_Usage_Example.ipynb`- Model_Usage_Example.ipynb – Demonstrates how to load the trained model and make predictions on new images.
+  - `Model_Usage_Example.ipynb`- Demonstrates how to load the trained model and make predictions on new images.
   - `README.md` – Instructions for running the notebook.
   - `fire_detection_model.h5` – Trained model file.
   - `requirements.txt` – Python package dependencies.
