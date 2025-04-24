@@ -2,6 +2,7 @@
 
 This repository contains a **Faster R-CNN** model trained using `PyTorch` and `torchvision` for the detection of fire using custom fire data from Kaggle.
 You can download the dataset from the following link: https://www.kaggle.com/datasets/sayedgamal99/smoke-fire-detection-yolo
+Note: Because of the size, the data file could not be downloaded, but a zip file could easily be downloaded using the link provided.
 
 
 
