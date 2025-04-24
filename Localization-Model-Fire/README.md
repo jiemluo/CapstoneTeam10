@@ -16,4 +16,7 @@ test_model_01.pth - The trained model file that can be used for testing and live
 
 ---
 ## How to test the RCNN model on a live camera
-
+1. Download the 'Localization-Model-Fire/Live_Videofeed_Demo_RCNN.ipynb' file.
+2. Update the second block so that the model file location is updated according to where the file is in your system.
+3. Once you run the next cell, your camera will open, and you will be able to test how the model works.
+4. Press 'q' in order to quit. If that doesn't work, manually stop the cell and rerun the last two lines within it.
