@@ -11,7 +11,9 @@ You can download the dataset from the following link: https://www.kaggle.com/dat
 Training_RCNN.ipynb - Used for training the RCNN model
 Testing_RCNN.ipynb - Used for testing images and getting test metrics on the trained model
 Live_Videofeed_Demo_RCNN.iynb - Used to run a live camera demonstration on the model on an available camera
+test_model_01.pth - The trained model file that can be used for testing and live footage
 
 
 ---
-# How to test model on a live camera
+## How to test the RCNN model on a live camera
+
